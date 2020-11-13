@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tinhGiaiThua(number) {
+            let tinh = 1;
+            for (let i = 1; i <= number; i++) {
+                tinh = tinh * i;
+            }
+            return tinh
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let soCanTinh = Number(prompt("Nhập số cần tính"))
+        alert("Giai thừa là " + tinhGiaiThua(soCanTinh));
+    </script>
+</body>
+
+</html>

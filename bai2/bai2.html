@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-    let chieurong = Number(prompt("Nhập số chiều rộng"));
-    let chieudai = Number(prompt("Nhập số chiều dài"));
+        let chieurong = Number(prompt("Nhập số chiều rộng"));
+        let chieudai = Number(prompt("Nhập số chiều dài"));
         let dientich = tinhdientich();
         let chuvi = tinhchuvi();
         alert("Diện tích hình chữ nhật là " + dientich + " và " + "chu vi hình chữ nhật là " + chuvi);
-        function tinhdientich(){;
-        return chieudai*chieurong;
+        function tinhdientich() {
+            ;
+            return chieudai * chieurong;
         }
-        function tinhchuvi(){;
-        return (chieudai+chieurong)*2;
+        function tinhchuvi() {
+            ;
+            return (chieudai + chieurong) * 2;
         }
     </script>
 </body>
+
 </html>
