@@ -30,24 +30,30 @@
             let tensanpham = document.getElementById("themsanpham").value;
             sanpham.push(tensanpham);
             hienthidanhsachsanpham();
-            index++;
+            
         }
         function hienthidanhsachsanpham() {
             let hienthi = "<table>";
             for (let i = 0; i < sanpham.length; i++) {
-                count = i+1;
-                hienthi += "<tr>"
-                hienthi += "<td>" + (i + 1) + "</td>"
-                hienthi += "<td>" + sanpham[i] + "</td>"
-                hienthi += "<td>" + '<input type="button" id="themsanpham" onclick="xoasanpham()" value="Sửa"></input>' + "</td>"
-                hienthi += "<td>" + '<input type="button" id="i" onclick="xoasanpham({count})" value="Xóa"></input>' + "</td>"
-                hienthi += "</tr>"
+                
+                hienthi += `<tr>
+                <td> ${i + 1} </td>
+                <td> ${sanpham[i]} </td>
+                <td> <input type="button" id="themsanpham" onclick="suasanpham(${i})" value="Sửa"></input> </td>
+                <td> <input type="button" id="i" onclick="xoasanpham(${i})" value="Xóa"></input> </td>
+                </tr>`
                 
             }
             document.getElementById("hienthi").innerHTML = hienthi + "</table>";
         }
-        function xoasanpham(index) {
-            sanpham.splice(index, 1);
+        function xoasanpham(i) {
+            sanpham.splice(i, 1);
+            hienthidanhsachsanpham();
+        }
+
+        function suasanpham(i){
+            let sanphamthaythe = prompt('Nhập từ bạn muốn thay vào')
+            sanpham.splice(i,1,sanphamthaythe);
             hienthidanhsachsanpham();
         }
 
