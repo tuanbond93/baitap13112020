@@ -6,10 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id="themsanpham"></input>
+    <button onclick="themsanpham()">Thêm</button>
+    <button onclick="hienthidanhsachsanpham()">Display</button>
     <script>
         let sanpham = []
-        themsanpham();
-        hienthidanhsachsanpham();
+        //themsanpham()
+        //hienthidanhsachsanpham();
         
         //chinhsuasanpham();
         //xoasanpham();
@@ -17,12 +20,14 @@
         
 
         function themsanpham() {
-            let tensanpham = prompt('Nhập tên sản phẩm');
+            let tensanpham = document.getElementById("themsanpham").value;
             sanpham.push(tensanpham)
         }
 
         function hienthidanhsachsanpham() {
-            document.write(sanpham[0])
+            for (let i=0; i< sanpham.length;i++) {
+            document.write(sanpham[i])
+            }
         }
     </script>
 </body>
