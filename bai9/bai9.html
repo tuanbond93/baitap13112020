@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let mangbandau = []
+        hoinguoidung();
+        kiemtrakytu();
+
+
+        function hoinguoidung() {
+            cautraloi = confirm('Bạn có muốn nhập tiếp');
+            if (cautraloi) {
+                themkytuvaomang();
+                hoinguoidung();
+            }
+            else {
+                alert(mangbandau)
+            }
+        }
+        function themkytuvaomang() {
+            let kytucanthem = prompt('Nhập ký tự cần thêm');
+            mangbandau.push(kytucanthem)
+        }
+
+        function kiemtrakytu() {
+            let kytucankiemtra = prompt('Nhập ký tự cần tìm');
+            let counter = 0;
+            for (let i = 0; i < mangbandau.length; i++) {
+                if (mangbandau[i] == kytucankiemtra) {
+                    counter++;
+                }
+            }
+            alert('Kí tự xuất hiện ' + counter + ' lần');
+        }
+    </script>
+</body>
+
+</html>
