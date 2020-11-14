@@ -10,12 +10,13 @@
         let sothunhat = Number(prompt('Nhập số thứ nhất'));
         let sothuhai = Number(prompt('Nhập số thứ hai'));
         let mangbandau = [sothunhat,sothuhai]
-        let mangtrunggian = []
         let mangdaovitri = []
         daonguocvitri()
+        alert(mangbandau);
+        alert(mangdaovitri)
         function daonguocvitri(){
-            for (i=1; i<= mangbandau.length; i++) {
-            mangtrunggian = mangbandau
+            for (i=0; i<= mangbandau.length - 1; i++) {
+            mangdaovitri[i] = mangbandau[mangbandau.length - i - 1]
             }
         }
     </script>
