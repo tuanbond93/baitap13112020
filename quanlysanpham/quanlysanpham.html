@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <input type="text" id="themsanpham"></input>
     <button onclick="themsanpham()">Thêm</button>
+
     <p id="hienthi"></p>
-    
+
     <script>
         let sanpham = []
-        
+        let index = 0;
         //themsanpham()
         //hienthidanhsachsanpham();
-        
+
         //chinhsuasanpham();
         //xoasanpham();
+        let count = 0;
 
-        
 
         function themsanpham() {
-            let hienthi = "" ;
+            
             let tensanpham = document.getElementById("themsanpham").value;
             sanpham.push(tensanpham);
-            for (let i=0; i< sanpham.length;i++) {          
-            hienthi+= (i+1) + sanpham[i] + " "+ "<button onclick='suasanpham()''>Sửa</button>" + "<button>Xóa</button>" + "</br>"
+            hienthidanhsachsanpham();
+            index++;
+        }
+        function hienthidanhsachsanpham() {
+            let hienthi = "<table>";
+            for (let i = 0; i < sanpham.length; i++) {
+                count = i+1;
+                hienthi += "<tr>"
+                hienthi += "<td>" + (i + 1) + "</td>"
+                hienthi += "<td>" + sanpham[i] + "</td>"
+                hienthi += "<td>" + '<input type="button" id="themsanpham" onclick="xoasanpham()" value="Sửa"></input>' + "</td>"
+                hienthi += "<td>" + '<input type="button" id="i" onclick="xoasanpham({count})" value="Xóa"></input>' + "</td>"
+                hienthi += "</tr>"
+                
             }
-            document.getElementById("hienthi").innerHTML = hienthi; 
+            document.getElementById("hienthi").innerHTML = hienthi + "</table>";
+        }
+        function xoasanpham(index) {
+            sanpham.splice(index, 1);
+            hienthidanhsachsanpham();
         }
 
     </script>
 </body>
+
 </html>
