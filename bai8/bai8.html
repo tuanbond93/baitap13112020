@@ -10,13 +10,30 @@
 <body>
     <script>
         let mangbandau = []
-        themsovaomang()
+        let mangdaovitri = []
+        hoinguoidung()
+        daonguocvitri()
 
-        function themsovaomang(){
+        function hoinguoidung() {
+            cautraloi = confirm('Bạn có muốn nhập tiếp');
+            if (cautraloi) {
+                themsovaomang();
+                hoinguoidung();
+            }
+            else {
+                alert(mangbandau)
+            }
+        }
+        function themsovaomang() {
             let socanthem = Number(prompt('Nhập số cần thêm'));
             mangbandau.push(socanthem)
         }
-
+        function daonguocvitri() {
+            for (i = 0; i <= mangbandau.length - 1; i++) {
+                mangdaovitri[i] = mangbandau[mangbandau.length - i - 1]
+            }
+            alert(mangdaovitri)
+        }
     </script>
 </body>
 
