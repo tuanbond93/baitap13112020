@@ -8,6 +8,22 @@
 <body>
     <script>
         let sanpham = []
+        themsanpham();
+        hienthidanhsachsanpham();
+        
+        //chinhsuasanpham();
+        //xoasanpham();
+
+        
+
+        function themsanpham() {
+            let tensanpham = prompt('Nhập tên sản phẩm');
+            sanpham.push(tensanpham)
+        }
+
+        function hienthidanhsachsanpham() {
+            document.write(sanpham[0])
+        }
     </script>
 </body>
 </html>
