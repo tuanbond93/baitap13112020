@@ -8,9 +8,11 @@
 <body>
     <input type="text" id="themsanpham"></input>
     <button onclick="themsanpham()">Thêm</button>
-    <button onclick="hienthidanhsachsanpham()">Display</button>
+    <p id="hienthi"></p>
+    
     <script>
         let sanpham = []
+        
         //themsanpham()
         //hienthidanhsachsanpham();
         
@@ -20,15 +22,15 @@
         
 
         function themsanpham() {
+            let hienthi = "" ;
             let tensanpham = document.getElementById("themsanpham").value;
-            sanpham.push(tensanpham)
+            sanpham.push(tensanpham);
+            for (let i=0; i< sanpham.length;i++) {          
+            hienthi+= (i+1) + sanpham[i] + " "+ "<button onclick='suasanpham()''>Sửa</button>" + "<button>Xóa</button>" + "</br>"
+            }
+            document.getElementById("hienthi").innerHTML = hienthi; 
         }
 
-        function hienthidanhsachsanpham() {
-            for (let i=0; i< sanpham.length;i++) {
-            document.write(sanpham[i])
-            }
-        }
     </script>
 </body>
 </html>
