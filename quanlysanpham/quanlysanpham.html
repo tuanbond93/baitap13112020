@@ -5,44 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 0px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        button {
+            background-color: rgb(65, 236, 65);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+
+        }
+
+        #header {
+            width: 300px;
+            height: 80px;
+            float: left;
+            background-color: #dddddd;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-
-    <input type="text" id="themsanpham"></input>
-    <button onclick="themsanpham()">Thêm</button>
-
+    <div id="header">
+            <input type="text" id="themsanpham" placeholder="New product"></input>
+            <button onclick="themsanpham()">Thêm</button>
+    </div>
     <p id="hienthi"></p>
 
     <script>
         let sanpham = []
         let index = 0;
-        //themsanpham()
-        //hienthidanhsachsanpham();
-
-        //chinhsuasanpham();
-        //xoasanpham();
-        let count = 0;
-
-
         function themsanpham() {
-            
+
             let tensanpham = document.getElementById("themsanpham").value;
             sanpham.push(tensanpham);
             hienthidanhsachsanpham();
-            
+
         }
         function hienthidanhsachsanpham() {
             let hienthi = "<table>";
             for (let i = 0; i < sanpham.length; i++) {
-                
+
                 hienthi += `<tr>
                 <td> ${i + 1} </td>
                 <td> ${sanpham[i]} </td>
-                <td> <input type="button" id="themsanpham" onclick="suasanpham(${i})" value="Sửa"></input> </td>
-                <td> <input type="button" id="i" onclick="xoasanpham(${i})" value="Xóa"></input> </td>
+                <td> <button onclick="suasanpham(${i})">Sửa</input> </td>
+                <td> <button onclick="xoasanpham(${i})">Xóa</input> </td>
                 </tr>`
-                
+
             }
             document.getElementById("hienthi").innerHTML = hienthi + "</table>";
         }
@@ -51,9 +82,9 @@
             hienthidanhsachsanpham();
         }
 
-        function suasanpham(i){
+        function suasanpham(i) {
             let sanphamthaythe = prompt('Nhập từ bạn muốn thay vào')
-            sanpham.splice(i,1,sanphamthaythe);
+            sanpham.splice(i, 1, sanphamthaythe);
             hienthidanhsachsanpham();
         }
 
