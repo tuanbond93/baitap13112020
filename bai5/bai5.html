@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sothunhat = Number(prompt('Nhập số thứ nhất'));
+        let sothuhai = Number(prompt('Nhập số thứ hai'));
+        let sothuba = Number(prompt('Nhập số thứ ba'));
+        let sobenhat
+        kiemtrasomotvahai();
+        kiemtrasobenhatvaba();
+        alert(sobenhat);
+        function kiemtrasomotvahai() {
+            if (sothunhat <= sothuhai) {
+                sobenhat = sothunhat;
+            }
+            else {
+                sobenhat = sothuhai;
+            }
+        }
+        function kiemtrasobenhatvaba() {
+            if (sobenhat >= sothuba) {
+                sobenhat = sothuba;
+            }
+        }
+    </script>
+</body>
+
+</html>
